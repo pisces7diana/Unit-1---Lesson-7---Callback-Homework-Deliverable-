@@ -66,14 +66,13 @@ const vendingMachine = {
         {name: 'soda', price: 3}
     ],
 
-    vend: function(position) {
-    if(position >= 0 && position < this.snacks.length) {
-        return this.snacks[position];
-      } else {
-        return 'Invalid position. Please choose a valid position.';
-      }
+    vend(position) {
+        if (position >= 0 && position < this.snacks.length) {
+            return this.snacks[position];
+        } else {
+            return 'Out of stock';
+        }
     }
 };
-  
-const selectedSnack = vendingMachine.vend(1);
-console.log(selectedSnack);
+const chosenSnack = vendingMachine.vend(0);
+console.log(chosenSnack);
