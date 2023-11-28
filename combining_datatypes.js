@@ -1,6 +1,7 @@
 // Section 2 Combining Datatypes
 
-    // Combine objects, arrays, and functions
+// Combine objects, arrays, and functions
+
 const crayonBox = {
     crayons : ["red", "yellow", "purple", "black"],
 }
@@ -20,8 +21,7 @@ const receipt = [
 
 console.log(receipt[0].name)
 
-const apartmentBuilding = [ ["Diana", "Josh", "Howard", "Jessica"]
-];
+const apartmentBuilding = [ ["Diana", "Josh", "Howard", "Jessica"]];
 console.log(apartmentBuilding[0][2]);
 
 // Combine objects, arrays, and functions more than one level deep
@@ -57,3 +57,23 @@ function powerButton() {
 const powerButtonON  = powerButton();
 
 powerButtonON();
+
+// Model a Vending Machine Model a vending machine
+const vendingMachine = {
+    snacks : [
+        {name: 'chips', price: 1},
+        {name: 'candy', price: 2},
+        {name: 'soda', price: 3}
+    ],
+
+    vend: function(position) {
+    if(position >= 0 && position < this.snacks.length) {
+        return this.snacks[position];
+      } else {
+        return 'Invalid position. Please choose a valid position.';
+      }
+    }
+};
+  
+const selectedSnack = vendingMachine.vend(1);
+console.log(selectedSnack);
